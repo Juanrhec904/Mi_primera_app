@@ -1,11 +1,12 @@
-import'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:primera_app/feature/home/bloc/home_bloc.dart';
+import 'package:primera_app/feature/home/presentation/wiew/crear.dart';
 
 class Login extends StatelessWidget {
-  const Login({
-    super.key,
-  });
+  const Login({super.key});
 
- @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -58,12 +59,15 @@ class Login extends StatelessWidget {
 
                 ElevatedButton(
                   onPressed: () {
-                    print("Iniciando sesión...");
+                    final home = BlocProvider.of<HomeBloc>(context);
+                    home.add(HomeSearchPressed());
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 40, vertical: 16),
+                      horizontal: 40,
+                      vertical: 16,
+                    ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -76,34 +80,37 @@ class Login extends StatelessWidget {
 
                 const SizedBox(height: 10),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        print("¿Olvidaste tu contraseña?");
-                      },
-                      child: const Text(
-                        "¿Olvidaste tu contraseña?",
-                        style: TextStyle(fontSize: 14, color: Colors.blue),
-                      ),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        print("Registrate aquí");
-                      },
-                      child: const Text(
-                        "Registrate aquí",
-                        style: TextStyle(fontSize: 14, color: Colors.blue),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
+               Row(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  children: [
+    TextButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Crear()),
+        );
+      },
+      child: const Text(
+        "Registrate aquí",
+        style: TextStyle(fontSize: 14, color: Colors.blue),
       ),
-    );
+    ),
+    TextButton(
+      onPressed: () {
+        print("¿Olvidaste tu contraseña?");
+      },
+      child: const Text(
+        "¿Olvidaste tu contraseña?",
+        style: TextStyle(fontSize: 14, color: Colors.blue),
+      ),
+    ),
+  ],
+),
+            ]
+            )
+          )
+        )
+      )
+  );
   }
-}
+  }

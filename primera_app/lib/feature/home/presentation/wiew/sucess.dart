@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'crear.dart';
 
 class sucess extends StatelessWidget {
   const sucess({
@@ -15,6 +16,7 @@ class sucess extends StatelessWidget {
       ),
       body: Center(child: Text('No hay notas aún....')),
 
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
@@ -29,9 +31,15 @@ class sucess extends StatelessWidget {
                         title: const Text('Crear nota'),
                         onTap: () {
                           Navigator.pop(context);
-                          print("Crear nota presionado");
+                          Navigator.push(
+                          context, 
+                          MaterialPageRoute(builder: (context) => Crear()
+                          
+                          )
+                          );
                         },
-                      ),
+                       ),
+
                       ListTile(
                         leading: const Icon(Icons.save),
                         title: const Text('Guardar nota'),
