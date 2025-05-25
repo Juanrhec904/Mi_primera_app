@@ -22,6 +22,7 @@ class Login extends StatelessWidget {
             ),
           ),
         ),
+        
         child: Center(
           child: Container(
             padding: const EdgeInsets.all(24),
@@ -30,6 +31,7 @@ class Login extends StatelessWidget {
               color: Colors.white.withOpacity(0.8),
               borderRadius: BorderRadius.circular(16),
             ),
+
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -37,8 +39,8 @@ class Login extends StatelessWidget {
                   "Bienvenido a tu lista de tareas",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-
                 SizedBox(height: 30),
+
                 TextField(
                   decoration: const InputDecoration(
                     labelText: 'Correo o Usuario',
@@ -54,7 +56,6 @@ class Login extends StatelessWidget {
                     border: OutlineInputBorder(),
                   ),
                 ),
-
                 const SizedBox(height: 20),
 
                 ElevatedButton(
@@ -62,16 +63,19 @@ class Login extends StatelessWidget {
                     final home = BlocProvider.of<HomeBloc>(context);
                     home.add(HomeSearchPressed());
                   },
+
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                     padding: const EdgeInsets.symmetric(
                       horizontal: 40,
                       vertical: 16,
                     ),
+
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
+
                   child: const Text(
                     "Iniciar sesión",
                     style: TextStyle(fontSize: 18, color: Colors.white),
@@ -81,36 +85,37 @@ class Login extends StatelessWidget {
                 const SizedBox(height: 10),
 
                Row(
-  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  children: [
-    TextButton(
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Crear()),
-        );
-      },
-      child: const Text(
-        "Registrate aquí",
-        style: TextStyle(fontSize: 14, color: Colors.blue),
-      ),
-    ),
-    TextButton(
-      onPressed: () {
-        print("¿Olvidaste tu contraseña?");
-      },
-      child: const Text(
-        "¿Olvidaste tu contraseña?",
-        style: TextStyle(fontSize: 14, color: Colors.blue),
-      ),
-    ),
-  ],
-),
-            ]
+               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+               TextButton(
+                  onPressed: () {
+               Navigator.push(
+               context,
+               MaterialPageRoute(builder: (context) => Crear()),
+              );
+            },
+            child: const Text(
+             "Registrate aquí",
+            style: TextStyle(fontSize: 14, color: Colors.blue),
+           ),
+           ),
+
+            TextButton(
+            onPressed: () {
+               print("¿Olvidaste tu contraseña?");
+            },
+           child: const Text(
+           "¿Olvidaste tu contraseña?",
+          style: TextStyle(fontSize: 14, color: Colors.blue),
+          ),
+          ),
+        ],
+          ),
+         ]
             )
           )
         )
-      )
-  );
-  }
+       )
+     );
+   }
   }

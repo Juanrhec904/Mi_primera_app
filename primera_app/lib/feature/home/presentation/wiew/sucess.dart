@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'crear.dart';
 
 class sucess extends StatelessWidget {
-  const sucess({
-    super.key,
-  });
+  const sucess({super.key});
 
- @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -15,7 +13,6 @@ class sucess extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 119, 197, 228),
       ),
       body: Center(child: Text('No hay notas aún....')),
-
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -32,13 +29,11 @@ class sucess extends StatelessWidget {
                         onTap: () {
                           Navigator.pop(context);
                           Navigator.push(
-                          context, 
-                          MaterialPageRoute(builder: (context) => Crear()
-                          
-                          )
+                            context,
+                            MaterialPageRoute(builder: (context) => Crear()),
                           );
                         },
-                       ),
+                      ),
 
                       ListTile(
                         leading: const Icon(Icons.save),
@@ -59,5 +54,3 @@ class sucess extends StatelessWidget {
     );
   }
 }
-
-
