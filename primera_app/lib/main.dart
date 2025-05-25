@@ -25,7 +25,7 @@ class Myapp extends StatelessWidget {
             } else if (state is Homeloanding) {
               return Loandig();
             } else if (state is Homefailure) {
-              return failure();
+              return Failure();
             }
             return Login();
           },
