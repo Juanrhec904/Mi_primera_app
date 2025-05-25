@@ -54,7 +54,7 @@ class Crear extends StatelessWidget {
 
               const SizedBox(height: 30),
 
-              // Botón guardar
+
               ElevatedButton(
                 onPressed: () {
                   final titulo = tituloController.text;
