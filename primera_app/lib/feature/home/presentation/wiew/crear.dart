@@ -11,7 +11,7 @@ class Crear extends StatelessWidget {
     final TextEditingController contenidoController = TextEditingController();
 
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(    
         title: const Text('Nota nueva'),
         backgroundColor: const Color.fromARGB(255, 119, 197, 228),
       ),
@@ -43,7 +43,6 @@ class Crear extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // Campo de contenido
               TextField(
                 controller: contenidoController,
                 maxLines: 5,
